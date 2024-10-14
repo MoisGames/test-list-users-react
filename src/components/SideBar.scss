@@ -1,0 +1,27 @@
+$color-dark-grey: rgba(189, 189, 189, 1);
+$color-black: rgba(0, 0, 0, 1);
+
+@font-face {
+    font-family: "Roboto-Light"; 
+    src: url("../assets/fonts/Roboto-Light.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+.sidebar-main {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-dark-grey;
+    width: 150px;
+    height: 1028px;
+}
+
+.sidebar-span {
+    margin: 35px 0px 0px 21px;
+    font-family: "Roboto-Light";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: left;
+    color: $color-black;
+}
