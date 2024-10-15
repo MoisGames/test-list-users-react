@@ -1,5 +1,5 @@
 import './App.scss';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom';
 import SideBar from './components/SideBar'
 import ListUser from './pages/ListUser';
 
