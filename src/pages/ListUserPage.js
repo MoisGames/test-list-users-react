@@ -10,7 +10,7 @@ const ListUser = observer(() => {
 
     const listEntryUser = useCallback(() => {
         fetchUsers().then(data => user.setUsers(data))
-    },[user])
+    },[])
 
     useEffect(() => {
         listEntryUser()

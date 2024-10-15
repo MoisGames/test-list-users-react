@@ -1,0 +1,46 @@
+$color-black: black;
+$color-blue: rgba(75, 81, 239, 1);
+$color-dark-grey: rgba(216, 216, 216, 1);
+$color-black-opacity: rgba(0, 0, 0, 0.3);
+
+@font-face {
+    font-family: "Roboto-Medium"; 
+    src: url("../../assets/fonts/Roboto-Medium.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+.input-standart__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-standart__title {
+    display: flex;
+    font-family: "Roboto-Medium";
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 9.38px;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.input-standart__input {
+    display: flex;
+    width: 10.99vw;
+    height: 22px;
+    border-radius: 5px;
+    border: 1px;
+    border: 1px solid $color-dark-grey;
+    color: black;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 11.72px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.input-standart__input:disabled {
+    color: $color-black-opacity;
+}
