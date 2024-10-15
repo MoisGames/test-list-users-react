@@ -1,7 +1,8 @@
 import './App.scss';
 import { Routes, Route, } from 'react-router-dom';
 import SideBar from './components/SideBar'
-import ListUser from './pages/ListUser';
+import ListUser from './pages/ListUserPage';
+import ProfileUserPage from './pages/ProfileUserPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ListUser />} />
         <Route path='/users' element={<ListUser />} />
+        <Route path='/profile' element={<ProfileUserPage />} />
         <Route path='*' element={<ListUser />} />
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect,useContext, useCallback } from 'react';
-import './ListUser.scss'
+import './ListUserPage.scss'
 import BriefInfo from '../components/BriefInfo';
 import { observer } from 'mobx-react-lite';
 import { fetchUsers } from '../http/usersAPI';
