@@ -1,0 +1,24 @@
+$color-black: rgba(0, 0, 0, 1);
+
+@font-face {
+    font-family: "Roboto-Black"; 
+    src: url("../assets/fonts/Roboto-Black.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+.main-list-user {
+    display: flex;
+    flex-direction: column;
+    width: 515px;
+    height: 1028px;
+}
+
+.main-list-user__title {
+    margin: 19px 0px 0px 34px;
+    font-family: "Roboto-Black";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.41px;
+    text-align: left;
+}

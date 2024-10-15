@@ -1,5 +1,6 @@
 import React from 'react';
 import './SideBar.scss'
+import ButtonSideBar from './button/ButtonSideBar';
 
 const SideBar = () => {
     return (
@@ -8,6 +9,8 @@ const SideBar = () => {
                 <span className='sidebar-span'>
                     Сортировка
                 </span>
+                <ButtonSideBar text='по городу' />
+                <ButtonSideBar text='по компании' />
             </main>
         </div>
     );

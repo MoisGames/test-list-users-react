@@ -1,0 +1,35 @@
+$color-white: white;
+$color-blue: rgba(75, 81, 239, 1);
+
+@font-face {
+    font-family: "Roboto-Light"; 
+    src: url("../../assets/fonts/Roboto-Light.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+.button-sidebar {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 10px;
+    padding: 5px 15px;
+    border: 0;
+    border-radius: 5px;
+    min-width: 0px;
+    max-width: 105px;
+    height: 24.12px;
+    background-color: $color-blue;
+}
+
+.button-text {
+    display: flex;
+    min-width: 0px;
+    max-width: 105px;
+    font-family: "Roboto-Light";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: left;
+    color: $color-white;
+}
