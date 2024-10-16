@@ -1,81 +1,102 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './ProfileUserPage.scss'
 import ButtonEdit from '../components/button/ButtonEdit';
 import InputStandart from '../components/input/InputStandart';
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
 import { fetchOneUser } from '../http/usersAPI';
+import InputComment from '../components/input/InputComment';
 
-const ProfileUser = observer (() => {
+const ProfileUserPage = observer (() => {
     const [user, setUser] = useState({})
+    const [show, setShow] = useState(true)
+
     const {id} = useParams()
 
-    useEffect(() => {
-        fetchOneUser(id).then(data => setUser(data))
-    }, [])
+    const getOneUser = useCallback(() => {
+        fetchOneUser(id).then(data => {
+            if (data !== undefined) {
+                setUser(data)
+            } else {
+                setUser('')
+            }
+        })
+    },[id,])
 
+    useEffect(() => {
+        getOneUser()
+    }, [getOneUser])
+    
     return (
         <main className='main-profile-user'>
             <section className='profile-user__wrapper_title'>
                 <span className='main-profile-user__title'>
                     Профиль пользователя
                 </span>
+                <span>
+                </span>
                 <span className='button-edit__wrapper'>
                     <ButtonEdit
                         text='Редактировать'
+                        onClick={() => setShow(false)}
                     />
                 </span>
             </section>
             <section className='profile-user__form__wrapper'>
                 <form className='profile-user__form'>
-                    <article className='profile-user-form__main'>
+                    <article className='profile-user-form__main' key={user.id}>
                         <InputStandart 
                         type='text'
                         textTitle='Name'
-                        value={user.name}
-                        disabled='true'
+                        placeholder={user?.name}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
                         textTitle='UserName'
-                        value={user.username}
-                        disabled='true'
+                        placeholder={user?.username}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
                         textTitle='E-mail'
-                        value={user.email}
-                        disabled='true'
+                        placeholder={user?.email}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
                         textTitle='Street'
-                        value={user.address.street}
-                        disabled='true'
+                        placeholder={user.address?.street}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
                         textTitle='City'
-                        value={user.address.city}
-                        disabled='true'
+                        placeholder={user.address?.street}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
                         textTitle='Zip code'
-                        value={user.address.zipcode}
-                        disabled='true'
+                        placeholder={user.address?.zipcode}
+                        disabled={show}
+                        />
+                        <InputStandart 
+                        type='number'
+                        textTitle='Phone'
+                        placeholder={user?.phone}
+                        disabled={show}
                         />
                         <InputStandart 
                         type='text'
-                        textTitle='Phone'
-                        value={user.phone}
-                        disabled='true'
+                        textTitle='Website'
+                        placeholder={user?.website}
+                        disabled={show}
                         />
-                        <InputStandart 
-                        type='Website'
-                        textTitle='Name'
-                        value={user.website}
-                        disabled='true'
+                        <InputComment
+                        type='text'
+                        textTitle='Comment' 
+                        disabled={true}
                         />
                     </article>
                 </form>
@@ -84,4 +105,4 @@ const ProfileUser = observer (() => {
     );
 });
 
-export default ProfileUser;
+export default ProfileUserPage;

@@ -1,15 +1,16 @@
 import React from 'react';
-import './InputStandart.scss'
+import './InputComment.scss'
 
-const InputStandart = (props) => {
+const InputComment = (props) => {
     return (
-        <article className='input-standart__wrapper'>
+        <article className='input-comment__wrapper'>
             <span 
-                className='input-standart__title'>
-                    {props.textTitle}
+                className='input-comment__title'
+                >
+                {props.textTitle}
             </span>
             <input 
-                className='input-standart__input'
+                className='input-comment__input'
                 type={props.type}
                 value={props.value}
                 disabled={props.disabled}
@@ -20,4 +21,4 @@ const InputStandart = (props) => {
     );
 };
 
-export default InputStandart;
+export default InputComment;

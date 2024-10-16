@@ -40,15 +40,17 @@ $color-light-grey: rgba(243, 243, 243, 1);
 .profile-user__form__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    width: 26.82vw;
 }
+
 
 .profile-user-form__main {
     display: flex;
     flex-direction: column;
-    width: 22.81vw;
-    height: 463px;
+    width: 22.31vw;
+    height: 423px;
     border-radius: 8px;
     border: solid $color-light-grey 1px;
     padding-top: 20px;

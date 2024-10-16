@@ -10,12 +10,13 @@ const ListUser = observer(() => {
 
     const listEntryUser = useCallback(() => {
         fetchUsers().then(data => user.setUsers(data))
-    },[])
+    },[user])
+    listEntryUser()
 
     useEffect(() => {
         listEntryUser()
     }, [listEntryUser])
-    
+
     return (
         <main className='main-list-user'>
             <span className='main-list-user__title'>

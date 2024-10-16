@@ -1,8 +1,10 @@
 import React, { useContext  } from 'react';
 import './BriefInfo.scss'
 import { Context } from '..';
+import { NavLink } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
-const BriefInfo = () => {
+const BriefInfo = observer (() => {
     const {user} = useContext(Context);
     
     return (
@@ -20,7 +22,7 @@ const BriefInfo = () => {
                             <span 
                                 className='brief-info__span_text'
                                 >
-                                    {users.name}
+                                    {users?.name}
                             </span>
                         </section>
                         <section 
@@ -30,7 +32,7 @@ const BriefInfo = () => {
                             <span 
                                 className='brief-info__span_text'
                                 >
-                                    {users.address.city}
+                                    {users.address?.city}
                             </span>
                         </section>
                         <section 
@@ -44,16 +46,21 @@ const BriefInfo = () => {
                                 </span>
                                 <span className='brief-info__span_text'
                                 >
-                                    {users.company.name}
+                                    {users.company?.name}
                                 </span>
                             </div>
-                            <button className='brief-info__button'>Подробнее</button>
+                            <NavLink 
+                                className='brief-info__button'
+                                to={'users/' + users?.id}
+                                >
+                                Подробнее
+                            </NavLink>
                         </section>
                     </section>
                 </article>
             )}
         </div>
     );
-};
+});
 
 export default BriefInfo;
