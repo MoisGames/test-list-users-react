@@ -3,17 +3,17 @@ import {makeAutoObservable} from 'mobx'
 export default class UserStore {
     constructor() {
         this._users = []
-        this._newUsers = []
+        this._profiles = []
         makeAutoObservable(this)
     }
-    setNewUsers(newUsers) {
-        this._newUsers = newUsers
+    setProfiles(profiles) {
+        this._profiles = profiles
     }
     setUsers(users) {
         this._users = users
     }
-    get newUsers() {
-        return this._newUsers
+    get profiles() {
+        return this._profiles
     }
     get users() {
         return this._users

@@ -9,11 +9,12 @@ const InputStandart = (props) => {
                     {props.textTitle}
             </span>
             <input 
-                className='input-standart__input'
+                className={props.classValidate}
                 type={props.type}
                 value={props.value}
                 disabled={props.disabled}
                 placeholder={props.placeholder}
+                onChange={props.onChange}
                 >
             </input>
         </article>

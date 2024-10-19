@@ -15,6 +15,7 @@ const InputComment = (props) => {
                 value={props.value}
                 disabled={props.disabled}
                 placeholder={props.placeholder}
+                onChange={props.onChange}
                 >
             </input>
         </article>
