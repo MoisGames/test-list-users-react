@@ -6,18 +6,11 @@ import { observer } from 'mobx-react-lite';
 
 const BriefInfo = observer (() => {
     const {user} = useContext(Context);
-    function test() {
-        // let result = user.users.map((el) => {
-        //     return el
-        // })
-        // console.log(result);
-    }
-    test()
-    
+
     return (
         <div
         >
-            {user.users.map((users,index) => 
+            {user?.users?.map((users,index) => 
                     <article 
                         className='brief-info__wrapper'
                         key={index}

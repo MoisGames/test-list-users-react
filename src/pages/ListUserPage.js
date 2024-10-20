@@ -16,23 +16,6 @@ const ListUser = observer(() => {
     useEffect(() => {
         listEntryUser()
     }, [listEntryUser])
-
-    // console.log(user.users);
-    
-
-    // let result = []
-
-    // for(const key in user.users) {
-    //     result.push(key, user.users[key])
-    // }
-
-    // console.log(result);
-    
-    // console.log(user.users.map(el => {
-    //     return JSON.parse(JSON.stringify(el))
-    // }
-    // ));
-
     return (
         <main className='main-list-user'>
             <span className='main-list-user__title'>
